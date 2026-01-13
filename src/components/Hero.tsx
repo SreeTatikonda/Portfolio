@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
+import { Zap, Server, TrendingUp } from "lucide-react";
 import Terminal from "./Terminal";
 import profileImage from "@/assets/profile.png";
+
+const highlights = [
+  { icon: Zap, text: "Automated workflows saving 40 hours/week of manual effort" },
+  { icon: Server, text: "Built systems processing 100K+ transactions daily" },
+  { icon: TrendingUp, text: "Optimized performance by 60% for enterprise-scale applications" },
+];
 
 const Hero = () => {
   return (
@@ -19,29 +26,49 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              Software Developer • 2025 Graduate
+              Software Engineer • MS CS @ Iowa State (Dec 2025)
             </motion.span>
 
             <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Hi, I'm{" "}
-              <span className="gradient-text">Yasaswini T</span>
+              <span className="gradient-text">Yasaswini Tatikonda</span>
             </motion.h1>
 
             <motion.p
-              className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-lg"
+              className="text-xl text-primary font-semibold mb-3"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
+            >
+              I build systems that eliminate repetitive work.
+            </motion.p>
+
+            <motion.p
+              className="text-muted-foreground mb-4 text-sm font-medium"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              Full-stack AI developer specializing in LLM systems, RAG pipelines, and production-ready ML applications. 
-              I build scalable backends, train custom models, and turn complex AI research into reliable software 
-              that solves real problems.
+              Highlight of my impact:
             </motion.p>
+
+            <motion.div
+              className="space-y-2 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45 }}
+            >
+              {highlights.map((item, index) => (
+                <div key={index} className="flex items-center gap-3 text-muted-foreground">
+                  <item.icon className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm">{item.text}</span>
+                </div>
+              ))}
+            </motion.div>
 
             <motion.div
               className="flex gap-4"
@@ -50,16 +77,16 @@ const Hero = () => {
               transition={{ delay: 0.5 }}
             >
               <a
-                href="#contact"
+                href="#projects"
                 className="px-6 py-3 bg-primary text-primary-foreground rounded-xl font-medium hover:opacity-90 transition-opacity"
               >
-                Get in Touch
+                View My Work
               </a>
               <a
-                href="#projects"
+                href="#contact"
                 className="px-6 py-3 glass-button rounded-xl font-medium"
               >
-                View Projects
+                Let's Talk
               </a>
             </motion.div>
           </motion.div>
@@ -79,7 +106,7 @@ const Hero = () => {
               >
                 <img 
                   src={profileImage} 
-                  alt="Yasaswini T" 
+                  alt="Yasaswini Tatikonda" 
                   className="w-full h-full object-cover"
                 />
               </motion.div>

@@ -1,13 +1,17 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, BookOpen, Rss } from "lucide-react";
 import { useState, useEffect } from "react";
+import gmailIcon from "@/assets/icons/gmail.svg";
+import linkedinIcon from "@/assets/icons/linkedin.svg";
+import githubIcon from "@/assets/icons/github.svg";
+import mediumIcon from "@/assets/icons/medium.svg";
+import substackIcon from "@/assets/icons/substack.svg";
 
 const socialLinks = [
-  { icon: Mail, href: "mailto:yasaswinitatikonda1@gmail.com", label: "Email" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/tatikondayasaswini", label: "LinkedIn" },
-  { icon: Github, href: "https://github.com/SreeTatikonda", label: "GitHub" },
-  { icon: BookOpen, href: "https://medium.com/@yasaswinitatikonda1", label: "Medium" },
-  { icon: Rss, href: "https://substack.com/@yasaswinitatikonda", label: "Substack" },
+  { icon: gmailIcon, href: "mailto:yasaswinitatikonda1@gmail.com", label: "Email" },
+  { icon: linkedinIcon, href: "https://www.linkedin.com/in/tatikondayasaswini", label: "LinkedIn" },
+  { icon: githubIcon, href: "https://github.com/SreeTatikonda", label: "GitHub" },
+  { icon: mediumIcon, href: "https://medium.com/@yasaswinitatikonda1", label: "Medium" },
+  { icon: substackIcon, href: "https://substack.com/@yasaswinitatikonda", label: "Substack" },
 ];
 
 const navItems = ["About", "Experience", "Skills", "Projects", "Education", "Testimonials", "Contact"];
@@ -92,21 +96,25 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           {socialLinks.map((link, index) => (
             <motion.a
               key={link.label}
               href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-bubble"
+              target={link.href.startsWith("mailto") ? undefined : "_blank"}
+              rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+              className="w-8 h-8 rounded-full bg-foreground/5 flex items-center justify-center hover:bg-foreground/10 transition-colors"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 + index * 0.1 }}
               whileHover={{ scale: 1.15 }}
               aria-label={link.label}
             >
-              <link.icon className="w-5 h-5 text-foreground/70" />
+              <img 
+                src={link.icon} 
+                alt={link.label} 
+                className="w-4 h-4 dark:invert opacity-70"
+              />
             </motion.a>
           ))}
         </div>

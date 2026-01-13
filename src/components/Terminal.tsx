@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const sentences = [
-  "Building scalable Python backends...",
-  "Obsessed with clean UI/UX design...",
-  "Full-stack problem solver...",
-  "Lifelong learner & tech enthusiast...",
+  "I build AI systems that actually ship to production.",
+  "Saved 40+ hours/week by automating what others do manually.",
+  "From prototype to 100K+ daily transactions — I scale it.",
+  "RAG pipelines, LLMs, full-stack — I connect all the dots.",
+  "I turn complex AI research into reliable software.",
+  "Looking for someone who delivers? Let's talk.",
 ];
 
 const Terminal = () => {

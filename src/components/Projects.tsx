@@ -116,31 +116,25 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
               </div>
 
-              <div className="p-6 space-y-4">
-                <h3 className="text-xl font-semibold">{project.title}</h3>
+              <div className="p-5 space-y-2">
+                <h3 className="text-lg font-semibold mb-3">{project.title}</h3>
                 
                 {/* Purpose */}
                 <div>
                   <span className="text-xs font-medium text-primary uppercase tracking-wider">Purpose</span>
-                  <p className="text-muted-foreground text-sm mt-1">{project.purpose}</p>
+                  <p className="text-muted-foreground text-sm">{project.purpose}</p>
                 </div>
 
                 {/* Problem */}
                 <div>
                   <span className="text-xs font-medium text-primary uppercase tracking-wider">Problem</span>
-                  <p className="text-muted-foreground text-sm mt-1">{project.problem}</p>
-                </div>
-
-                {/* Challenges */}
-                <div>
-                  <span className="text-xs font-medium text-primary uppercase tracking-wider">Challenges</span>
-                  <p className="text-muted-foreground text-sm mt-1">{project.challenges}</p>
+                  <p className="text-muted-foreground text-sm">{project.problem}</p>
                 </div>
 
                 {/* Outcome */}
                 <div>
                   <span className="text-xs font-medium text-primary uppercase tracking-wider">Outcome</span>
-                  <p className="text-muted-foreground text-sm mt-1">{project.outcome}</p>
+                  <p className="text-muted-foreground text-sm">{project.outcome}</p>
                 </div>
 
                 {/* Technologies */}

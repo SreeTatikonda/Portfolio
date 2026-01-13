@@ -11,7 +11,7 @@ const highlights = [
 
 const Hero = () => {
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center px-6 pt-24 pb-12">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-6 pt-24 pb-12">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Bio */}

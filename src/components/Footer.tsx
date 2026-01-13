@@ -14,7 +14,7 @@ const Footer = () => {
           transition={{ duration: 0.5 }}
         >
           <p className="text-sm text-muted-foreground">
-            © {year} Yasaswini Tatikonda. All rights reserved.
+            © {year} Yasaswini Tatikonda
           </p>
         </motion.div>
       </div>

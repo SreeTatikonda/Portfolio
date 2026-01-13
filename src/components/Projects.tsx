@@ -83,20 +83,27 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="glass-card overflow-hidden group"
+              className="glass-card overflow-hidden group cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
+              whileHover={{ 
+                y: -8, 
+                scale: 1.02,
+                boxShadow: "0 20px 40px -15px hsl(var(--primary) / 0.15)",
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              whileTap={{ scale: 0.98 }}
             >
               {/* Project image */}
-              <div className="h-40 overflow-hidden border-b border-border/30">
+              <div className="h-40 overflow-hidden border-b border-border/30 relative">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               <div className="p-5">
@@ -110,7 +117,7 @@ const Projects = () => {
                   {project.highlights.map((highlight) => (
                     <span
                       key={highlight}
-                      className="px-2 py-0.5 text-xs font-medium bg-primary/10 text-primary rounded-full"
+                      className="px-2 py-0.5 text-xs font-medium bg-primary/10 text-primary rounded-full transition-all duration-300 hover:bg-primary/20 hover:scale-105"
                     >
                       {highlight}
                     </span>
@@ -122,7 +129,7 @@ const Projects = () => {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-0.5 text-xs text-muted-foreground bg-muted/50 rounded"
+                      className="px-2 py-0.5 text-xs text-muted-foreground bg-muted/50 rounded transition-all duration-300 hover:bg-muted hover:text-foreground"
                     >
                       {tag}
                     </span>
@@ -133,11 +140,14 @@ const Projects = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  whileHover={{ x: 2 }}
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-all duration-300 group/link"
+                  whileHover={{ x: 4 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <Github className="w-4 h-4" />
-                  View on GitHub
+                  <Github className="w-4 h-4 transition-transform duration-300 group-hover/link:rotate-12" />
+                  <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all after:duration-300 group-hover/link:after:w-full">
+                    View on GitHub
+                  </span>
                 </motion.a>
               </div>
             </motion.div>

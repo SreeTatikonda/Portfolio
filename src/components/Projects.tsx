@@ -75,7 +75,7 @@ const Projects = () => {
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            AI/ML applications, system programming, and research projects
+            Built out of curiosity
           </p>
         </motion.div>
 

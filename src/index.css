@@ -86,6 +86,32 @@
   .social-bubble {
     @apply w-12 h-12 rounded-full glass-button flex items-center justify-center hover:scale-110 transition-transform duration-300;
   }
+
+  .border-beam-gradient {
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 60deg,
+      hsl(var(--primary)) 120deg,
+      hsl(220 90% 70%) 180deg,
+      hsl(var(--primary)) 240deg,
+      transparent 300deg,
+      transparent 360deg
+    );
+  }
+}
+
+@keyframes border-beam {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-border-beam {
+  animation: border-beam 3s linear infinite;
 }
 
 @layer utilities {

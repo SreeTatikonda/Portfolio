@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
-import { Github, Brain, FileSearch, Cpu, Code, Shield, Stethoscope } from "lucide-react";
+import { Github } from "lucide-react";
+
+// Import project images
+import chestxrayscanImg from "@/assets/projects/chestxrayscan.png";
+import multimodalragImg from "@/assets/projects/multimodalrag.png";
+import emotionaiImg from "@/assets/projects/emotionai.png";
+import airesumeanalyserImg from "@/assets/projects/airesumeanalyser.png";
+import compilerImg from "@/assets/projects/compiler.png";
+import qkdencryptionImg from "@/assets/projects/qkdencryption.png";
 
 const projects = [
   {
@@ -8,7 +16,7 @@ const projects = [
     tags: ["Python", "PyTorch", "Computer Vision"],
     highlights: ["94% Accuracy", "Medical AI", "Deep Learning"],
     github: "https://github.com/SreeTatikonda/ChestXray-Scan",
-    icon: Stethoscope,
+    image: chestxrayscanImg,
   },
   {
     title: "Multi-Modal RAG System",
@@ -16,7 +24,7 @@ const projects = [
     tags: ["Python", "LLMs", "Computer Vision", "RAG", "Embeddings"],
     highlights: ["Multi-Modal Retrieval", "LLM Reasoning", "Unified Embeddings"],
     github: "https://github.com/SreeTatikonda/RAG_projects",
-    icon: Brain,
+    image: multimodalragImg,
   },
   {
     title: "Emotion Detection from Text",
@@ -24,7 +32,7 @@ const projects = [
     tags: ["Python", "NLP", "PyTorch"],
     highlights: ["92% Accuracy", "Real-time NLP", "Interactive UI"],
     github: "https://github.com/SreeTatikonda/Emotion-Detection-from-Text",
-    icon: FileSearch,
+    image: emotionaiImg,
   },
   {
     title: "AI Resume Analyser",
@@ -32,7 +40,7 @@ const projects = [
     tags: ["Python", "NLP", "React"],
     highlights: ["NLP Processing", "AI Matching", "Career Tech"],
     github: "https://github.com/SreeTatikonda/AI-Resume_Analyser",
-    icon: Cpu,
+    image: airesumeanalyserImg,
   },
   {
     title: "C Compiler",
@@ -40,7 +48,7 @@ const projects = [
     tags: ["Python", "C#", "Java"],
     highlights: ["System Programming", "Language Design", "Code Generation"],
     github: "https://github.com/SreeTatikonda/Compiler---C-Compiler",
-    icon: Code,
+    image: compilerImg,
   },
   {
     title: "Quantum Key Distribution",
@@ -48,7 +56,7 @@ const projects = [
     tags: ["Python", "Security", "Quantum"],
     highlights: ["Quantum Security", "Cryptography", "Research"],
     github: "https://github.com/SreeTatikonda/Encryption-and-Decryption-using-QKD",
-    icon: Shield,
+    image: qkdencryptionImg,
   },
 ];
 
@@ -82,9 +90,13 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
             >
-              {/* Project icon header */}
-              <div className="h-32 bg-gradient-to-br from-primary/10 to-blue-400/10 flex items-center justify-center border-b border-border/30">
-                <project.icon className="w-14 h-14 text-primary/60 group-hover:scale-110 transition-transform" />
+              {/* Project image */}
+              <div className="h-40 overflow-hidden border-b border-border/30">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
 
               <div className="p-5">

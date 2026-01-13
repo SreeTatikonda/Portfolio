@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, BookOpen, Rss } from "lucide-react";
 
 const socialLinks = [
-  { icon: Mail, href: "mailto:yasaswini.t@example.com", label: "Email" },
-  { icon: Linkedin, href: "https://linkedin.com/in/yasaswini-t", label: "LinkedIn" },
-  { icon: Github, href: "https://github.com/yasaswini-t", label: "GitHub" },
-  { icon: BookOpen, href: "https://medium.com/@yasaswini-t", label: "Medium" },
-  { icon: Rss, href: "https://substack.com/@yasaswini-t", label: "Substack" },
+  { icon: Mail, href: "mailto:yasaswinitatikonda1@gmail.com", label: "Email" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/tatikondayasaswini", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/SreeTatikonda", label: "GitHub" },
+  { icon: BookOpen, href: "https://medium.com/@yasaswinitatikonda1", label: "Medium" },
+  { icon: Rss, href: "https://substack.com/@yasaswinitatikonda", label: "Substack" },
 ];
 
 const Navbar = () => {
@@ -27,7 +27,7 @@ const Navbar = () => {
         </motion.a>
 
         <div className="hidden md:flex items-center gap-6">
-          {["About", "Skills", "Projects", "Testimonials", "Contact"].map((item, index) => (
+          {["About", "Experience", "Skills", "Projects", "Education", "Testimonials", "Contact"].map((item, index) => (
             <motion.a
               key={item}
               href={`#${item.toLowerCase()}`}

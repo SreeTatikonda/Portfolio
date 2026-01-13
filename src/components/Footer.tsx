@@ -17,7 +17,7 @@ const Footer = () => {
           </p>
           
           <p className="flex items-center gap-1 text-sm text-muted-foreground">
-            Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> using React & Tailwind
+            Crafted with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> and lots of coffee
           </p>
         </motion.div>
       </div>

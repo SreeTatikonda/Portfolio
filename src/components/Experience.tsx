@@ -21,7 +21,7 @@ const experiences: ExperienceItem[] = [
     id: "cds",
     company: "CDS Global",
     logo: cdsLogo,
-    role: "Process Automation and AI Associate (CO-OP)",
+    role: "AI Associate - Operations Automation (CO-OP)",
     location: "Des Moines, Iowa",
     timeline: "May 2025 – Present",
     techStack: [

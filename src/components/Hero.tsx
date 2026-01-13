@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Zap, Server, TrendingUp } from "lucide-react";
+import { Zap, Server, TrendingUp, Download } from "lucide-react";
 import Terminal from "./Terminal";
 import profileImage from "@/assets/profile.png";
 
@@ -21,12 +21,16 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
           >
             <motion.span
-              className="inline-block px-4 py-2 rounded-full glass-button text-sm font-medium text-muted-foreground mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/40 text-sm font-semibold text-green-700 dark:text-green-400 mb-6 shadow-sm"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              Software Engineer • Open to Work
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+              </span>
+              Software Engineer • Actively Seeking Opportunities
             </motion.span>
 
             <motion.h1
@@ -63,10 +67,17 @@ const Hero = () => {
               transition={{ delay: 0.45 }}
             >
               {highlights.map((item, index) => (
-                <div key={index} className="flex items-center gap-3 text-muted-foreground">
-                  <item.icon className="w-4 h-4 text-primary shrink-0" />
-                  <span className="text-sm">{item.text}</span>
-                </div>
+                <motion.div 
+                  key={index} 
+                  className="flex items-center gap-3 p-3 rounded-xl bg-primary/5 border-l-4 border-primary"
+                  whileHover={{ x: 4 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <item.icon className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="text-sm font-medium text-foreground">{item.text}</span>
+                </motion.div>
               ))}
             </motion.div>
 
@@ -87,6 +98,14 @@ const Hero = () => {
                 className="px-6 py-3 glass-button rounded-xl font-medium"
               >
                 Let's Talk
+              </a>
+              <a
+                href="/resume.pdf"
+                download
+                className="px-6 py-3 glass-button rounded-xl font-medium inline-flex items-center gap-2 hover:bg-primary/5 transition-colors"
+              >
+                <Download className="w-4 h-4" />
+                Resume
               </a>
             </motion.div>
           </motion.div>

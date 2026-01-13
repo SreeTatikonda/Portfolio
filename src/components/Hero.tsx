@@ -99,8 +99,13 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="relative">
+              {/* Animated Border Beam */}
+              <div className="absolute inset-0 w-[calc(100%+16px)] h-[calc(100%+16px)] -top-2 -left-2 rounded-full overflow-hidden">
+                <div className="absolute inset-0 rounded-full border-beam-gradient animate-border-beam" />
+              </div>
+              
               <motion.div
-                className="w-72 h-72 md:w-80 md:h-80 rounded-full glass-card flex items-center justify-center overflow-hidden"
+                className="relative w-72 h-72 md:w-80 md:h-80 rounded-full glass-card flex items-center justify-center overflow-hidden border-2 border-background"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >

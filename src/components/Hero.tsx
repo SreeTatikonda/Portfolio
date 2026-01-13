@@ -26,7 +26,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              Software Engineer • MS CS @ Iowa State (Dec 2025)
+              Software Engineer • Open to Work
             </motion.span>
 
             <motion.h1

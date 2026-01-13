@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { User } from "lucide-react";
 import Terminal from "./Terminal";
+import profileImage from "@/assets/profile.png";
 
 const Hero = () => {
   return (
@@ -77,8 +77,11 @@ const Hero = () => {
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
-                {/* Placeholder for photo - replace with actual image */}
-                <User className="w-32 h-32 text-muted-foreground/50" />
+                <img 
+                  src={profileImage} 
+                  alt="Yasaswini T" 
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
               
               {/* Decorative elements */}

@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, MapPin, Calendar } from "lucide-react";
+import cdsLogo from "@/assets/cds-global-logo.png";
+import iowaStateLogo from "@/assets/iowa-state-logo.png";
+import accentureLogo from "@/assets/accenture-logo.png";
 
 interface ExperienceItem {
   id: string;
@@ -17,8 +20,8 @@ const experiences: ExperienceItem[] = [
   {
     id: "cds",
     company: "CDS Global",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    role: "Software Developer",
+    logo: cdsLogo,
+    role: "Process Automation and AI Associate (CO-OP)",
     location: "Des Moines, Iowa",
     timeline: "May 2025 – Present",
     techStack: [
@@ -44,9 +47,9 @@ const experiences: ExperienceItem[] = [
   {
     id: "isu-research",
     company: "Iowa State University",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    role: "Graduate Research Assistant",
-    location: "Department of Computer Science",
+    logo: iowaStateLogo,
+    role: "Graduate Research Assistant (AI Full-Stack)",
+    location: "Ames, Iowa",
     timeline: "Nov 2024 – Present",
     techStack: [
       { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
@@ -71,9 +74,9 @@ const experiences: ExperienceItem[] = [
   {
     id: "isu-app",
     company: "Iowa State University",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    role: "Software Developer - App Development",
-    location: "Iowa State University",
+    logo: iowaStateLogo,
+    role: "Software Developer – App Development",
+    location: "Ames, Iowa",
     timeline: "Feb 2024 – Sept 2024",
     techStack: [
       { name: "React Native", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -95,9 +98,9 @@ const experiences: ExperienceItem[] = [
   {
     id: "accenture",
     company: "Accenture",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
+    logo: accentureLogo,
     role: "App Development Associate",
-    location: "India",
+    location: "Bengaluru, India",
     timeline: "Oct 2022 – Dec 2023",
     techStack: [
       { name: ".NET Core", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" },

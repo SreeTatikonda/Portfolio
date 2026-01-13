@@ -1,25 +1,28 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import tammyImage from "@/assets/tammy.png";
+import kojoImage from "@/assets/kojo.png";
+import abiramiImage from "@/assets/abirami.png";
 
 const testimonials = [
   {
     name: "Tammy Griggs",
     role: "IT Developer and Manager, CDS Global",
     content: "It's been a real pleasure having Yasaswini on our development team. From day one, she brought a rare combination of curiosity, technical depth, and genuine enthusiasm. She's playing a key role in integrating AI into our systems, turning complex ideas into practical solutions.",
-    avatar: "TG",
+    photo: tammyImage,
   },
   {
     name: "Dr. Kojo Adu-Gyamfi",
     role: "Research Supervisor, Iowa State University",
     content: "Yasaswini played a key role in the success of the project, and I would confidently recommend her for work involving applied AI, RAG systems, and production-ready LLM applications. She was also a great collaborator throughout the project. Communication was clear, code reviews were thoughtful, and she was always willing to dig into complex problems with the rest of the team. Her attention to detail helped us ship a more stable and polished product.",
-    avatar: "KA",
+    photo: kojoImage,
   },
   {
     name: "Abirami Sowrirajan",
     role: "Scrum Master, Accenture",
     content: "Yasaswini consistently delivered her tasks on time and exceeded expectations with her problem-solving mindset. She approached challenges methodically and delivered quality results that moved our projects forward.",
-    avatar: "AS",
+    photo: abiramiImage,
   },
 ];
 
@@ -69,10 +72,12 @@ const Testimonials = () => {
               </p>
 
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-lg font-semibold text-primary">
-                    {testimonials[currentIndex].avatar}
-                  </span>
+                <div className="w-14 h-14 rounded-full overflow-hidden">
+                  <img 
+                    src={testimonials[currentIndex].photo} 
+                    alt={testimonials[currentIndex].name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <h4 className="font-semibold">{testimonials[currentIndex].name}</h4>

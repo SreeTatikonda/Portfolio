@@ -12,55 +12,49 @@ import qkdencryptionImg from "@/assets/projects/qkdencryption.png";
 const projects = [
   {
     title: "Chest X-Ray Scan Analysis",
-    purpose: "CNN-based pneumonia detection from chest X-rays.",
-    problem: "Manual diagnosis is slow and error-prone at scale.",
+    story: "Wondered if AI could catch what doctors might miss in busy hospitals. Built a CNN to read X-rays and flag pneumonia.",
     technologies: ["Python", "PyTorch", "CNN", "OpenCV"],
-    outcome: "94% accuracy — reliable diagnostic support.",
+    outcomes: ["94% detection accuracy", "Faster than manual review"],
     github: "https://github.com/SreeTatikonda/ChestXray-Scan",
     image: chestxrayscanImg,
   },
   {
     title: "Multi-Modal RAG System",
-    purpose: "RAG system that processes both images and text.",
-    problem: "Standard RAG misses context from visual content.",
+    story: "Frustrated that RAG systems ignored images. Built one that understands both visuals and text together.",
     technologies: ["Python", "LangChain", "CLIP", "LLMs", "Vector DB"],
-    outcome: "Unified embeddings with grounded LLM reasoning.",
+    outcomes: ["Unified image-text embeddings", "Grounded LLM responses"],
     github: "https://github.com/SreeTatikonda/RAG_projects",
     image: multimodalragImg,
   },
   {
     title: "Emotion Detection from Text",
-    purpose: "Transformer-based emotion classifier (DistilBERT).",
-    problem: "Sentiment analysis lacks emotional nuance.",
+    story: "Sentiment is binary. Emotions aren't. Trained DistilBERT to detect nuanced feelings in text.",
     technologies: ["Python", "DistilBERT", "PyTorch", "Streamlit"],
-    outcome: "92% accuracy with real-time inference.",
+    outcomes: ["92% accuracy", "Real-time inference"],
     github: "https://github.com/SreeTatikonda/Emotion-Detection-from-Text",
     image: emotionaiImg,
   },
   {
     title: "AI Resume Analyser",
-    purpose: "NLP tool matching resumes to job descriptions.",
-    problem: "Hard to optimize resumes for specific roles.",
+    story: "Job hunting is a guessing game. Built a tool to show exactly how your resume matches a job posting.",
     technologies: ["Python", "NLP", "React", "Sentence Transformers"],
-    outcome: "Actionable feedback to improve match scores.",
+    outcomes: ["Skill gap detection", "Actionable improvement tips"],
     github: "https://github.com/SreeTatikonda/AI-Resume_Analyser",
     image: airesumeanalyserImg,
   },
   {
     title: "C Compiler",
-    purpose: "Full C compiler from scratch.",
-    problem: "Learning compiler internals hands-on.",
+    story: "Wanted to truly understand how code becomes executable. Built a compiler from scratch to find out.",
     technologies: ["Python", "C#", "Java", "LLVM"],
-    outcome: "Complete pipeline: lexer → parser → codegen.",
+    outcomes: ["Full lexer → parser → codegen", "Handles complex C constructs"],
     github: "https://github.com/SreeTatikonda/Compiler---C-Compiler",
     image: compilerImg,
   },
   {
     title: "Quantum Key Distribution",
-    purpose: "BB84 protocol for quantum-secure encryption.",
-    problem: "Classical encryption vulnerable to quantum attacks.",
+    story: "Classical encryption will break with quantum computers. Explored BB84 protocol to understand quantum-safe security.",
     technologies: ["Python", "Qiskit", "Cryptography", "NumPy"],
-    outcome: "Theoretically unbreakable key exchange.",
+    outcomes: ["Unbreakable key exchange", "Quantum simulation working"],
     github: "https://github.com/SreeTatikonda/Encryption-and-Decryption-using-QKD",
     image: qkdencryptionImg,
   },
@@ -110,26 +104,21 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
               </div>
 
-              <div className="p-5 space-y-2">
-                <h3 className="text-lg font-semibold mb-3">{project.title}</h3>
+              <div className="p-5 space-y-3">
+                <h3 className="text-lg font-semibold">{project.title}</h3>
                 
-                {/* Purpose */}
-                <div>
-                  <span className="text-xs font-medium text-primary uppercase tracking-wider">Purpose</span>
-                  <p className="text-muted-foreground text-sm">{project.purpose}</p>
-                </div>
+                {/* Story */}
+                <p className="text-muted-foreground text-sm leading-relaxed">{project.story}</p>
 
-                {/* Problem */}
-                <div>
-                  <span className="text-xs font-medium text-primary uppercase tracking-wider">Problem</span>
-                  <p className="text-muted-foreground text-sm">{project.problem}</p>
-                </div>
-
-                {/* Outcome */}
-                <div>
-                  <span className="text-xs font-medium text-primary uppercase tracking-wider">Outcome</span>
-                  <p className="text-muted-foreground text-sm">{project.outcome}</p>
-                </div>
+                {/* Outcomes */}
+                <ul className="space-y-1">
+                  {project.outcomes.map((outcome, i) => (
+                    <li key={i} className="text-sm text-foreground flex items-center gap-2">
+                      <span className="w-1 h-1 rounded-full bg-primary" />
+                      {outcome}
+                    </li>
+                  ))}
+                </ul>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 pt-2">

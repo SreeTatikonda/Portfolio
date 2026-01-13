@@ -120,16 +120,20 @@ const experiences: ExperienceItem[] = [
   },
 ];
 
-const ExperienceCard = ({ experience }: { experience: ExperienceItem }) => {
+const ExperienceCard = ({ experience, index }: { experience: ExperienceItem; index: number }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <motion.div
       className="glass-card overflow-hidden"
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ 
+        duration: 0.6, 
+        delay: index * 0.15,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }}
     >
       <button
         onClick={() => setIsExpanded(!isExpanded)}
@@ -241,8 +245,8 @@ const Experience = () => {
         </motion.div>
 
         <div className="space-y-6">
-          {experiences.map((experience) => (
-            <ExperienceCard key={experience.id} experience={experience} />
+          {experiences.map((experience, index) => (
+            <ExperienceCard key={experience.id} experience={experience} index={index} />
           ))}
         </div>
       </div>

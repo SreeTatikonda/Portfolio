@@ -38,9 +38,9 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              A passionate software developer with expertise in full-stack development, 
-              cloud technologies, and building scalable applications. I love turning 
-              complex problems into elegant, user-friendly solutions.
+              Full-stack AI developer specializing in LLM systems, RAG pipelines, and production-ready ML applications. 
+              I build scalable backends, train custom models, and turn complex AI research into reliable software 
+              that solves real problems.
             </motion.p>
 
             <motion.div

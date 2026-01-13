@@ -4,22 +4,22 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "Engineering Manager at Tech Corp",
-    content: "Yasaswini demonstrated exceptional problem-solving skills during her internship. Her ability to quickly grasp complex systems and deliver quality code was impressive. She's a true asset to any development team.",
-    avatar: "SJ",
+    name: "Tammy Griggs",
+    role: "IT Developer and Manager, CDS Global",
+    content: "It's been a real pleasure having Yasaswini on our development team. From day one, she brought a rare combination of curiosity, technical depth, and genuine enthusiasm. She's playing a key role in integrating AI into our systems, turning complex ideas into practical solutions.",
+    avatar: "TG",
   },
   {
-    name: "Michael Chen",
-    role: "Senior Developer at StartupXYZ",
-    content: "Working with Yasaswini was a fantastic experience. Her attention to detail and commitment to writing clean, maintainable code set her apart. She consistently exceeded our expectations.",
-    avatar: "MC",
+    name: "Dr. Kojo Adu-Gyamfi",
+    role: "Research Supervisor, Iowa State University",
+    content: "Yasaswini played a key role in the success of the project, and I would confidently recommend her for work involving applied AI, RAG systems, and production-ready LLM applications. She was also a great collaborator throughout the project. Communication was clear, code reviews were thoughtful, and she was always willing to dig into complex problems with the rest of the team. Her attention to detail helped us ship a more stable and polished product.",
+    avatar: "KA",
   },
   {
-    name: "Dr. Emily Roberts",
-    role: "Professor of Computer Science",
-    content: "Yasaswini was one of my top students. Her curiosity, dedication to learning, and ability to apply theoretical concepts to practical problems made her stand out in every project she undertook.",
-    avatar: "ER",
+    name: "Abirami Sowrirajan",
+    role: "Scrum Master, Accenture",
+    content: "Yasaswini consistently delivered her tasks on time and exceeded expectations with her problem-solving mindset. She approached challenges methodically and delivered quality results that moved our projects forward.",
+    avatar: "AS",
   },
 ];
 

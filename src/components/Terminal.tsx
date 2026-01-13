@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const sentences = [
-  "I build AI systems that actually ship to production.",
-  "Saved 40+ hours/week by automating what others do manually.",
-  "From prototype to 100K+ daily transactions — I scale it.",
-  "RAG pipelines, LLMs, full-stack — I connect all the dots.",
-  "I turn complex AI research into reliable software.",
-  "Looking for someone who delivers? Let's talk.",
+  "I automate the boring stuff.",
+  "Building AI that doesn't hallucinate (too much).",
+  "Debugging is just detective work with snacks.",
+  "Open to new opportunities.",
+  "Still learning. Always will be.",
+  "Looking for a team that appreciates good commit messages.",
 ];
 
 const Terminal = () => {

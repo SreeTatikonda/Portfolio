@@ -87,7 +87,7 @@ const Skills = () => {
             Technical <span className="gradient-text">Skills</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            A comprehensive toolkit for building modern, scalable applications
+            My go-to stack
           </p>
         </motion.div>
 

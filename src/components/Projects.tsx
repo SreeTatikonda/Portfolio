@@ -8,6 +8,7 @@ import emotionaiImg from "@/assets/projects/emotionai.png";
 import airesumeanalyserImg from "@/assets/projects/airesumeanalyser.png";
 import compilerImg from "@/assets/projects/compiler.png";
 import qkdencryptionImg from "@/assets/projects/qkdencryption.png";
+import facerecognitionImg from "@/assets/projects/facerecognition.png";
 
 const projects = [
   {
@@ -57,6 +58,38 @@ const projects = [
     outcomes: ["Unbreakable key exchange", "Quantum simulation working"],
     github: "https://github.com/SreeTatikonda/Encryption-and-Decryption-using-QKD",
     image: qkdencryptionImg,
+  },
+  {
+    title: "AI Financial Planning Agent",
+    story: "An AI-powered financial planning agent that analyzes transactions, categorizes spending, and generates personalized budgeting insights using LLM-based reasoning.",
+    technologies: ["Python", "FastAPI", "LLMs", "Ollama", "Gemini API", "NLP", "SQL"],
+    outcomes: ["Real-time recommendations", "Personalized budgeting insights"],
+    github: "#",
+    image: chestxrayscanImg,
+  },
+  {
+    title: "Enterprise Knowledge MCP Server",
+    story: "An MCP-compliant server that enables LLM agents to securely retrieve and reason over enterprise knowledge through standardized tool-based context exchange.",
+    technologies: ["Python", "FastAPI", "MCP", "LLMs", "RAG", "JSON-RPC"],
+    outcomes: ["Reduced hallucinations", "Improved response reliability"],
+    github: "#",
+    image: chestxrayscanImg,
+  },
+  {
+    title: "Song Recommendation System",
+    story: "A music recommendation system that infers user mood from text using NLP-based emotion detection, classifying sentiment across 9 mood categories with confidence scoring.",
+    technologies: ["Python", "NLP", "Machine Learning", "Flask", "SQL"],
+    outcomes: ["85%+ emotion classification accuracy", "9 mood categories"],
+    github: "#",
+    image: chestxrayscanImg,
+  },
+  {
+    title: "Face Recognition System",
+    story: "A real-time face recognition system that detects and identifies faces using deep learning, with support for multi-face detection and high accuracy under varying lighting.",
+    technologies: ["Python", "OpenCV", "Deep Learning", "Computer Vision"],
+    outcomes: ["Real-time detection", "Multi-face support"],
+    github: "#",
+    image: facerecognitionImg,
   },
 ];
 
@@ -139,6 +172,14 @@ const Projects = () => {
                   className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-all duration-300 group/link pt-2"
                   whileHover={{ x: 4 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    if (typeof (window as any).gtag === 'function') {
+                      (window as any).gtag('event', 'github_click', {
+                        event_category: 'projects',
+                        event_label: project.title,
+                      });
+                    }
+                  }}
                 >
                   <Github className="w-4 h-4 transition-transform duration-300 group-hover/link:rotate-12" />
                   <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all after:duration-300 group-hover/link:after:w-full">

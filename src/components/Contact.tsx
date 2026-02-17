@@ -90,6 +90,14 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
+          onClick={() => {
+            if (typeof (window as any).gtag === 'function') {
+              (window as any).gtag('event', 'resume_download', {
+                event_category: 'engagement',
+                event_label: 'resume_pdf',
+              });
+            }
+          }}
         >
           <Download className="w-4 h-4" />
           Download Resume

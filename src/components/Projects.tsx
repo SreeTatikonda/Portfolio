@@ -9,6 +9,8 @@ import airesumeanalyserImg from "@/assets/projects/airesumeanalyser.png";
 import compilerImg from "@/assets/projects/compiler.png";
 import qkdencryptionImg from "@/assets/projects/qkdencryption.png";
 import facerecognitionImg from "@/assets/projects/facerecognition.png";
+import financialai from "@/assets/projects/financialai.png";
+import moddify from "@/assets/projects/moddify.png";
 
 const projects = [
   {

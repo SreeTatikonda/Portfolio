@@ -64,7 +64,7 @@ const projects = [
     story: "An AI-powered financial planning agent that analyzes transactions, categorizes spending, and generates personalized budgeting insights using LLM-based reasoning.",
     technologies: ["Python", "FastAPI", "LLMs", "Ollama", "Gemini API", "NLP", "SQL"],
     outcomes: ["Real-time recommendations", "Personalized budgeting insights"],
-    github: "#",
+    github: "https://github.com/SreeTatikonda/AI-Financial-Planning-Assistant-",
     image: chestxrayscanImg,
   },
   {
@@ -80,7 +80,7 @@ const projects = [
     story: "A music recommendation system that infers user mood from text using NLP-based emotion detection, classifying sentiment across 9 mood categories with confidence scoring.",
     technologies: ["Python", "NLP", "Machine Learning", "Flask", "SQL"],
     outcomes: ["85%+ emotion classification accuracy", "9 mood categories"],
-    github: "#",
+    github: "https://github.com/SreeTatikonda/Song_Recommendation-",
     image: chestxrayscanImg,
   },
   {
@@ -88,7 +88,7 @@ const projects = [
     story: "A real-time face recognition system that detects and identifies faces using deep learning, with support for multi-face detection and high accuracy under varying lighting.",
     technologies: ["Python", "OpenCV", "Deep Learning", "Computer Vision"],
     outcomes: ["Real-time detection", "Multi-face support"],
-    github: "#",
+    github: "https://github.com/SreeTatikonda/FaceRecognition-",
     image: facerecognitionImg,
   },
 ];

@@ -65,7 +65,7 @@ const projects = [
     technologies: ["Python", "FastAPI", "LLMs", "Ollama", "Gemini API", "NLP", "SQL"],
     outcomes: ["Real-time recommendations", "Personalized budgeting insights"],
     github: "https://github.com/SreeTatikonda/AI-Financial-Planning-Assistant-",
-    image: chestxrayscanImg,
+    image: financialai,
   },
   {
     title: "Enterprise Knowledge MCP Server",
@@ -81,7 +81,7 @@ const projects = [
     technologies: ["Python", "NLP", "Machine Learning", "Flask", "SQL"],
     outcomes: ["85%+ emotion classification accuracy", "9 mood categories"],
     github: "https://github.com/SreeTatikonda/Song_Recommendation-",
-    image: chestxrayscanImg,
+    image: moddify,
   },
   {
     title: "Face Recognition System",

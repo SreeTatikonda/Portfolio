@@ -25,7 +25,7 @@ const experiences: ExperienceItem[] = [
     role: "Software Engineer (AI Ops)",
     location: "Des Moines, Iowa",
     timeline: "May 2025 – Present",
-    context: "Replaced manual document processing workflows with intelligent AI systems, improving speed, accuracy, and operational scale.",
+    context: "Automated enterprise document processing by building fine-tuned transformer pipelines and NLP systems that replaced manual workflows, now processing 20K+ documents daily in production.",
     techStack: [
       { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
       { name: "FastAPI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
@@ -37,10 +37,10 @@ const experiences: ExperienceItem[] = [
       "Fine-tuned LayoutLMv3 on 500+ domain-specific document templates for layout extraction, achieving 96% field accuracy, integrated with Tesseract OCR into a production pipeline processing 20K+ documents/day.",
       "Trained NER model on domain-specific annotated corpus using spaCy and transformer backbone, achieving 91% F1 on entity extraction across document fields.",
       "Engineered chain-of-thought prompt templates for multi-class document classification, improving accuracy by 28% vs zero-shot baseline on internal benchmark.",
-      "Containerized 6 ML microservices using Docker multi-stage builds, reducing production image size from 8GB to 1.2GB and cutting cold start time by 68%.",
-      "Deployed ML services on Kubernetes with blue-green rollouts, enabling zero-downtime model updates and automated rollback on performance regression.",
       "Built production feedback loop routing misclassified documents into retraining dataset, improving model accuracy by 12% over 3 automated retraining cycles.",
       "Implemented data drift detector comparing live request distribution against training baseline, triggering automated retraining pipeline before accuracy SLA breach.",
+      "Containerized 6 ML microservices using Docker multi-stage builds, reducing production image size from 8GB to 1.2GB and cutting cold start time by 68%.",
+      "Deployed ML services on Kubernetes with blue-green rollouts, enabling zero-downtime model updates and automated rollback on performance regression.",
     ],
   },
   {
@@ -50,7 +50,7 @@ const experiences: ExperienceItem[] = [
     role: "Software Developer & Research Assistant",
     location: "Ames, Iowa",
     timeline: "Feb 2024 – May 2025",
-    context: "Built AI-powered applications to make course knowledge instantly accessible to students and simplify academic planning.",
+    context: "Built production GenAI systems including multimodal RAG pipelines, fine-tuned LLMs, and multi-agent frameworks serving 1,000+ daily users in a university research environment.",
     techStack: [
       { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
       { name: "FastAPI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
@@ -60,12 +60,12 @@ const experiences: ExperienceItem[] = [
       { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
     ],
     bullets: [
-      "Fine-tuned GPT-4 for automated XML document conversion, achieving 83% schema compliance accuracy vs rule-based baseline.",
       "Architected multimodal RAG pipeline ingesting PDFs, Office docs, and images with hybrid text and visual retrieval, MinerU-based parsing, and cross-modal knowledge graph, achieving 99% retrieval accuracy on 1,000+ daily queries.",
       "Implemented dual evaluation strategy using RAGAS (faithfulness, answer relevancy, context precision, recall) achieving 0.91 average score on 200-query test set, and LLM-as-judge with GPT-4 achieving 0.84 correlation with human preference scores.",
       "Built multi-step LLM agent with 8 custom tools including web search, SQL, and code execution, reducing analyst research time by 70% on structured tasks.",
       "Implemented multi-hop RAG with citation verification requiring every factual claim to be grounded in retrieved context, reducing unsupported LLM responses by 78%.",
       "Built CLIP-based multimodal retrieval enabling semantic text-to-image search across document corpus, reducing manual visual search time by 80%.",
+      "Fine-tuned GPT-4 for automated XML document conversion, achieving 83% schema compliance accuracy vs rule-based baseline.",
       "Deployed async FastAPI inference service handling 2,000+ concurrent requests at sub-200ms P99 latency with LLM token streaming, reducing perceived response latency by 70%.",
     ],
   },
@@ -76,7 +76,7 @@ const experiences: ExperienceItem[] = [
     role: "Software Engineer",
     location: "Remote",
     timeline: "Oct 2022 – Dec 2023",
-    context: "Developed and maintained enterprise backend services for high-traffic production systems, balancing feature delivery with performance and reliability.",
+    context: "Designed and scaled enterprise backend APIs handling 100K+ daily requests, cutting endpoint latency by 32% and reducing production incident resolution time by 48%.",
     techStack: [
       { name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
       { name: ".NET Core", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" },
@@ -84,10 +84,10 @@ const experiences: ExperienceItem[] = [
       { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
     ],
     bullets: [
-      "Built RESTful APIs in ASP.NET Core processing 50K-100K+ daily requests with request validation, middleware pipelines, and layered service architecture for clean separation of concerns.",
-      "Reduced PostgreSQL endpoint latency by 32% by eliminating N+1 query patterns, adding composite indexes, and introducing query result caching on high-traffic endpoints.",
       "Cut mean time to resolution for production incidents by 48% via centralized error handling, structured JSON logging, and distributed request tracing with correlation IDs.",
+      "Reduced PostgreSQL endpoint latency by 32% by eliminating N+1 query patterns, adding composite indexes, and introducing query result caching on high-traffic endpoints.",
       "Maintained 99.9% uptime across microservices through health check endpoints, graceful shutdown handling, and automated alerting on error rate thresholds.",
+      "Built RESTful APIs in ASP.NET Core processing 50K-100K+ daily requests with request validation, middleware pipelines, and layered service architecture for clean separation of concerns.",
       "Decomposed monolithic service logic into independently deployable microservices, enabling targeted scaling and reducing blast radius of service failures.",
       "Hardened inter-service communication with Polly-based retry policies and circuit breakers, eliminating cascading failures from transient downstream outages.",
     ],
@@ -167,6 +167,12 @@ const ExperienceCard = ({ experience, index }: { experience: ExperienceItem; ind
         </div>
       </button>
 
+      {experience.context && (
+        <div className="px-6 pb-4">
+          <p className="text-sm text-muted-foreground border-l-2 border-primary/40 pl-3 italic">{experience.context}</p>
+        </div>
+      )}
+
       <AnimatePresence>
         {isExpanded && (
           <motion.div
@@ -177,9 +183,6 @@ const ExperienceCard = ({ experience, index }: { experience: ExperienceItem; ind
             className="overflow-hidden"
           >
             <div className="px-6 pb-6 pt-2 border-t border-border/30">
-              {experience.context && (
-                <p className="text-sm italic text-muted-foreground mt-3 mb-4">{experience.context}</p>
-              )}
               <ul className="space-y-3 mt-4">
                 {experience.bullets.map((bullet, index) => (
                   <motion.li
